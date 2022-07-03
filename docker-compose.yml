@@ -5,15 +5,8 @@ services:
     image: oznu/homebridge:latest
     container_name: homebridge
     restart: unless-stopped
-    network_mode: host
-    ports:
-      - 8581:8581    
+    network_mode: host  
     environment:
       - HOMEBRIDGE_CONFIG_UI_PORT=8581
     volumes:
       - ./homebridge:/homebridge
-
-networks:
-  default:
-    external:
-      name: ${DOCKER_NETWORK}
